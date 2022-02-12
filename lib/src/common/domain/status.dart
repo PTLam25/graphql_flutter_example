@@ -5,6 +5,6 @@ enum Status {
   alive,
   @JsonValue('Dead')
   dead,
-  @JsonValue('Unknown')
+  @JsonValue('unknown')
   unknown,
 }
