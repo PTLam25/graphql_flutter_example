@@ -1,0 +1,35 @@
+targets:
+  $default:
+    sources:
+      - $package$
+      - lib/**
+      - pubspec.yaml
+      - test/**
+    builders:
+      json_serializable:
+        enabled: true
+        generate_for:
+          exclude:
+            - test
+          include:
+            - lib/**
+        options:
+          any_map: false
+          checked: false
+          create_factory: true
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: true
+          field_rename: snake
+          ignore_unannotated: false
+          include_if_null: true
+      freezed:
+        enabled: true
+        generate_for:
+          exclude:
+            - test
+          include:
+            - lib/**
+        options:
+          union_key: type
+          union_value_case: snake
