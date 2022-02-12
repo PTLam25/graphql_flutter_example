@@ -432,8 +432,8 @@ class __$InitialCopyWithImpl<$Res> extends _$CharactersStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_Initial extends _Initial {
+  const _$_Initial() : super._();
 
   @override
   String toString() {
@@ -530,8 +530,9 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements CharactersState {
+abstract class _Initial extends CharactersState {
   const factory _Initial() = _$_Initial;
+  const _Initial._() : super._();
 }
 
 /// @nodoc
@@ -552,8 +553,8 @@ class __$LoadingCopyWithImpl<$Res> extends _$CharactersStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_Loading extends _Loading {
+  const _$_Loading() : super._();
 
   @override
   String toString() {
@@ -650,8 +651,9 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements CharactersState {
+abstract class _Loading extends CharactersState {
   const factory _Loading() = _$_Loading;
+  const _Loading._() : super._();
 }
 
 /// @nodoc
@@ -717,12 +719,13 @@ class __$SuccessCopyWithImpl<$Res> extends _$CharactersStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
+class _$_Success extends _Success {
   const _$_Success(
       {required this.characters,
       required this.nextPage,
       this.isPaginating = false,
-      this.paginationError});
+      this.paginationError})
+      : super._();
 
   @override
   final IList<Character> characters;
@@ -847,12 +850,13 @@ class _$_Success implements _Success {
   }
 }
 
-abstract class _Success implements CharactersState {
+abstract class _Success extends CharactersState {
   const factory _Success(
       {required IList<Character> characters,
       required int? nextPage,
       bool isPaginating,
       RequestError? paginationError}) = _$_Success;
+  const _Success._() : super._();
 
   IList<Character> get characters;
   int? get nextPage;
@@ -903,8 +907,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$CharactersStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.requestError);
+class _$_Error extends _Error {
+  const _$_Error(this.requestError) : super._();
 
   @override
   final RequestError requestError;
@@ -1013,8 +1017,9 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements CharactersState {
+abstract class _Error extends CharactersState {
   const factory _Error(RequestError requestError) = _$_Error;
+  const _Error._() : super._();
 
   RequestError get requestError;
   @JsonKey(ignore: true)
