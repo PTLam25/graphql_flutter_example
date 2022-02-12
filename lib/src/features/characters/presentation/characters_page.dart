@@ -5,6 +5,7 @@ import 'package:graphql_flutter_example/src/common/domain/character/character.da
 import 'package:graphql_flutter_example/src/common/injection/injection.dart';
 import 'package:graphql_flutter_example/src/common/presentation/widgets/loading_indicator.dart';
 import 'package:graphql_flutter_example/src/common/presentation/widgets/try_again_button.dart';
+import 'package:graphql_flutter_example/src/features/character_details/presentation/character_details_page.dart';
 import 'package:graphql_flutter_example/src/features/characters/presentation/widgets/character_list.dart';
 
 class CharactersPage extends StatefulWidget {
@@ -71,7 +72,14 @@ class _CharactersPageState extends State<CharactersPage> {
   }
 
   void _onCharacterTap(Character character) {
-    print(character);
+    Navigator.push<dynamic>(
+      context,
+      MaterialPageRoute<dynamic>(
+        builder: (_) => CharacterDetailsPage(
+          character: character,
+        ),
+      ),
+    );
   }
 
   void _onRetry() {
